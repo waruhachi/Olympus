@@ -1,6 +1,5 @@
-.theos/
-packages/
-.DS_Store
+.theos
 .vscode
-__pycache__
-.luz
+.DS_Store
+
+/packages

@@ -1,16 +1,9 @@
-TARGET := iphone:clang:14.5
+export ARCHS = arm64 arm64e
+export TARGET = iphone:16.5:14.0
+
 INSTALL_TARGET_PROCESSES = SpringBoard
-export THEOS_DEVICE_IP=192.168.50.114
+
+SUBPROJECTS += Tweak Preferences
 
 include $(THEOS)/makefiles/common.mk
-
-TWEAK_NAME = Olympus
-
-$(TWEAK_NAME)_FILES = Tweak.x
-$(TWEAK_NAME)_PRIVATE_FRAMEWORKS = SpringBoardFoundation MobileCoreServices
-$(TWEAK_NAME)_EXTRA_FRAMEWORKS = Cephei
-$(TWEAK_NAME)_CFLAGS = -fobjc-arc
-
-include $(THEOS_MAKE_PATH)/tweak.mk
-SUBPROJECTS += olympusprefs
 include $(THEOS_MAKE_PATH)/aggregate.mk
